@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package javaapplication26;
+
+import java.util.Scanner;
+
+public class JavaApplication26 {
+
+    public static double computeAverage(int total, int count) {
+        if (count <= 0) {
+            return 0.0;
+        }
+        return (double) total / count;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter count(whole number)");
+        int userTotal = input.nextInt();
+
+        System.out.println("Enter count(whole number)");
+        int userCount = input.nextInt();
+
+        double userResult = computeAverage(userTotal, userCount);
+        System.out.println("Your test (" + userTotal + ", " + userCount + ")-> Result:" + userResult);
+
+        input.close();
+
+        // PROBLEM 1
+        //1. Why does the method need the word "double" in return?
+        // It uses "double" because the answer might have decimal numbers. 
+        //Unlike "int", which only accepts whole numbers, "double" can store values like 2.5 or 3.75
+       
+        // 2. What does each recursive call do to index, and why must it change?
+        // Every time the method calls itself, the index goes up by one. This allows the program
+        //to move to the next grade in the array. If the index does not change, the method will keep 
+        //checking the same value repeatedly.
+    }
+
+}
